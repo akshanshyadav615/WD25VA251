@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data value types in JS</title>
+</head>
+<body>
+    <script>
+        //primitive : single value(immutable)
+        //string / number/ boolean/ null/ undefined/ symbol/ BigInt
+        let name = "Ab";
+       
+        let age = 25;
+        let isMarried = false;
+        let address = null;
+        let education;
+        console.log(isMarried);
+        console.log(typeof (isMarried));
+
+        //BigInt
+        let salary = BigInt("9007199254740991");
+        console.log(salary);
+        //symbol
+        let name1 = Symbol("vikas");
+        let name2 = Symbol("vikas");
+        console.log(name1 == name2);
+        //non primitive/ reference/ object : multiple value(mutable)
+        // object/ array/ function
+        //object{} - It is an collection of its key and value
+        let student = {
+           name : "vikas",
+           age : 25, 
+           isMarried : true,
+           address :{
+            streetNo : 123,
+            city : "Delhi",
+           },
+           course: "B.tech",
+           branch : "CSE",
+           year : 2025,
+           getInfo:function() {
+            return "My Education is " + student.course + " " + student.branch +" " + "and year is" + " " +student.year;
+           }
+           
+        };
+        console.log(student);
+        console.log(student.name + " " + student.age  + " " + student.address.city + " " + student.course); 
+        console.log(typeof (student));
+        console.log(student.getInfo());
+
+        //find object propertie in object
+
+        console.log('ag' in student);
+        //delete object property
+        console.log(delete student.name);
+        console.log(student);
+        console.log('name' in student);
+
+        //access object keys/propertie using bracket notation
+        console.log(student['isMarried']);
+
+
+    </script>
+    
+</body>
+</html>

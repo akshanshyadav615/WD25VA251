@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in js</title>
+</head>
+<body>
+    <script>
+        //A reusable block of code designed  to perform a specific task.
+        //normal function.
+
+        function demo(text){
+            console.log("hello js");
+        }
+        demo();
+
+    //function call.
+
+    function demol(text){
+        console.log("hello "+ text);
+    }
+    demol("JavaScript");
+
+    //function with default parameter.
+function add(a,b){
+    console.log("Addition is " + (a+b));
+}
+
+add(20,20);
+
+
+//annonymous function : a function without a name.It use for one-time task.
+let cal= function(a,b){
+    var num1=5;
+    var num2=10;
+    var result = num2/num1;
+    console.log("division is " + result);
+}
+cal();
+
+
+//arrow function : it is a shorter syntax for writing function expression.
+let div=(x,y)=>{
+    var num1=x;
+    var num2=y;
+    var result=x/y;
+    console.log("Division is " + result);
+
+}
+div(10,10);
+
+//callback function : a function that is passed as an argument to another function and is executed after some operation is completed.
+
+function sub(a,b,callback){
+    var result=a-b;
+    callback(result);
+}
+sub(20,10,function(result){
+    console.log("Subtraction is " + result);
+} );
+
+//IIFE (Immediately Invoked Function Expression) : a function that is defined and executed immediately after its creation.
+
+(function(a,b){
+    console.log(`first parameter ${a} and second parameter ${b}`);
+    var res=a+b;
+    console.log(`result is ${res}`);
+})(10,20);
+
+//short code using arrow function.
+(masg=>console.log("hello IIFE"))();
+
+//promises : a promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+let promise = new Promise(function(resolve,reject){
+     let age=20;
+    if(age>=18){
+        resolve("Valid age");
+    } else {
+        reject("Invalid age");
+    }
+});
+promise
+.then(msg=>console.log(msg))
+.catch(err=>console.log(err));
+
+//async/await : async/await is a syntactic sugar built on top of promises that allows you to write asynchronous code in a more synchronous and readable manner.
+async function userData(){
+    let response=await fetch('https://dummyjson.com/products');
+    let responseData=await response.json();
+    console.log(responseData);
+}
+userData();
+
+//local storage : local storage is a web storage API that allows you to store data in the browser's local storage. It provides a way to store key-value pairs in the browser, which can be accessed and manipulated using JavaScript.
+let myInfo={
+    name:"Akshansh",
+    age:20,
+    mob:1234567890,
+    eMail:"akshansh@example.com"
+}
+//converting object into JSON string.
+localStorage.setItem('perfrence',myInfo);
+
+//converting object string into stringfyed data.
+let myInfoData=JSON.stringify(myInfo);
+
+//set data.
+localStorage.setItem('perfrence',myInfoData);
+
+// Retriving and parsing data.
+let getMYInfoData=localStorage.getItem('perfrence');
+
+//pars the object 
+let parseData=JSON.parse(getMYInfoData);
+console.log(parseData);
+
+let num=[1,2,3,4,5];
+let result =num.map(n=>n*n);
+console.log(`square of num is ${result}`);
+
+let sum=num.reduce((total,n)=>total+n);
+console.log(`sum of num is ${sum}`);
+
+
+
+
+    
+    </script>
+    
+</body>
+</html>

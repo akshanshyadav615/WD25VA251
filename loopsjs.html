@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in java</title>
+</head>
+<body>
+    <script>
+        let studentlist = ["akshansh", "Abis", "Anshul", "Anshika"];
+        // for loop: best used when you know the number of iterations in advance.
+        for(let i=0; i<studentlist.length; i++){
+            console.log(studentlist[i]);
+        }
+
+        //while loop: used when the number of iteration in uncertain , and the loop should continue a s long as a condition is true.
+        let x=0;
+        while(x<studentlist.length){
+            console.log(studentlist[x]);
+            x++;
+        }
+
+        //for of loop: used to iterate over iterable objects like arrays, strings, maps, sets etc.
+        for(let y of studentlist){    
+            console.log(y);
+        }
+        
+        let myInfo = {
+            name : "Akshansh",
+            age : 18,
+            city : "Uttar pradesh",
+            course : "B.tech",
+            branch : "CSE",
+            emial : "akshansh@gmail.com",
+
+        }
+        for(let key in myInfo){
+            console.log(myInfo[key]);
+        }
+
+
+    
+    </script>
+    
+</body>
+</html>
